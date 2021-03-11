@@ -12,6 +12,8 @@ firebase.auth().onAuthStateChanged(async function(user) {
       email: user.email,
       name: user.displayName
     })
+    
+    // Beggining of Dashboard Body Content
     document.querySelector('.subscriptions').insertAdjacentHTML('beforeend',`
       <div class="mt-8 mb-2 mx-16 px-8 py-4 text-4xl text-green-600 font-bold text-center border-8 rounded-full border-gray-600">
           <h1>Subscription Tracker</h1>`)
