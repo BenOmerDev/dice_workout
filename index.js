@@ -40,7 +40,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
         <div class="w-1/3 mt-4 mb-2 px-8 text-center py-4 text-2xl text-black-600 
         font-bold border-8 rounded-r-full border-green-600">$3.99</div>
       </div>`)
-
+      
     // Sign out button
     document.querySelector('.sign-in-or-sign-out').innerHTML = `
       <div class="text-white-500">Signed in as ${user.displayName}</div>
