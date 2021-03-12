@@ -13,45 +13,57 @@ firebase.auth().onAuthStateChanged(async function(user) {
       name: user.displayName
     })
     
-    // Beggining of Dashboard Body Content
-    document.querySelector('.subscriptions').insertAdjacentHTML('beforeend',`
-      <div class="mt-8 mb-2 mx-16 px-8 py-4 text-4xl text-green-600 font-bold text-center border-8 rounded-full border-gray-600">
-          <h1>Subscription Tracker</h1>`)
-    
-    document.querySelector('.subscriptions').insertAdjacentHTML('beforeend',`
-      <div class=" mx-8   flex text-4xl text-center">
-          <div class="w-1/3 px-2 py-4">
-              ☁
-          </div>
-          <div class="w-1/3 px-2 py-4">
-              📅
-          </div>
-          <div class="w-1/3 px-2 py-4">
-              💲
-          </div>
-      </div>`)
+    // 👇👇👇Beggining of Dashboard Body Content👇👇👇
+    // let querySnapshot = await db.collection('subscriptions').get()
+    // console.log(`Number to subscriptions in collection: ${querySnapshot.size}`)
 
-    document.querySelector('.subscriptions').insertAdjacentHTML('beforeend', `
-      <div class="mx-8 flex">
-        <div class="w-1/3 mt-4 mb-2 px-8 text-center py-4 text-2xl text-black-600 
-        font-bold border-8 rounded-l-full border-green-600">🍕</div>
-        <div class="w-1/3 mt-4 mb-2 px-8 text-center py-4 text-2xl text-black-600 
-        font-bold border-8 border-green-600">17th</div>
-        <div class="w-1/3 mt-4 mb-2 px-8 text-center py-4 text-2xl text-black-600 
-        font-bold border-8 rounded-r-full border-green-600">$3.99</div>
-      </div>`)
+    // let subs = querySnapshot.docs
+    // for (let i=0; i<subs.length; i++) {
+    //   let subId = subs[i].id
+    //   let sub = subs[i].data()
+    //   let subDate = subs.date
+    //   let subPrice = subs.price
+    //   let subService = subs.service
+    //   let subUid = subs.userId
+      document.querySelector('.subscriptions').insertAdjacentHTML('beforeend',`
+        <div class="mt-8 mb-2 mx-16 px-8 py-4 text-4xl text-green-600 font-bold text-center border-8 rounded-full border-gray-600">
+            <h1>Subscription Tracker</h1>`)
       
-    // Sign out button
-    document.querySelector('.sign-in-or-sign-out').innerHTML = `
-      <div class="text-white-500">Signed in as ${user.displayName}</div>
-      <button class="text-pink-500 underline sign-out">Sign Out</button>`
+      document.querySelector('.subscriptions').insertAdjacentHTML('beforeend',`
+        <div class=" mx-8   flex text-4xl text-center">
+            <div class="w-1/3 px-2 py-4">
+                ☁
+            </div>
+            <div class="w-1/3 px-2 py-4">
+                📅
+            </div>
+            <div class="w-1/3 px-2 py-4">
+                💲
+            </div>
+        </div>`)
 
-    // Signs out if 
-    document.querySelector('.sign-out').addEventListener('click', function(event) {
-      console.log('sign out clicked')
-      firebase.auth().signOut()
-      document.location.href = 'index.html'
-    })
+      document.querySelector('.subscriptions').insertAdjacentHTML('beforeend', `
+        <div class="mx-8 flex">
+          <div class="w-1/3 mt-4 mb-2 px-8 text-center py-4 text-2xl text-black-600 
+          font-bold border-8 rounded-l-full border-green-600">${subService}</div>
+          <div class="w-1/3 mt-4 mb-2 px-8 text-center py-4 text-2xl text-black-600 
+          font-bold border-8 border-green-600">17th</div>
+          <div class="w-1/3 mt-4 mb-2 px-8 text-center py-4 text-2xl text-black-600 
+          font-bold border-8 rounded-r-full border-green-600">$3.99</div>
+        </div>`)
+        
+      // Sign out button
+      document.querySelector('.sign-in-or-sign-out').innerHTML = `
+        <div class="text-white-500">Signed in as ${user.displayName}</div>
+        <button class="text-pink-500 underline sign-out">Sign Out</button>`
+
+      // Signs out if 
+      document.querySelector('.sign-out').addEventListener('click', function(event) {
+        console.log('sign out clicked')
+        firebase.auth().signOut()
+        document.location.href = 'index.html'
+      })
+    // }
   }
   else {
     // Signed out
