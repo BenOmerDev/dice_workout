@@ -1,4 +1,5 @@
-firebase.auth().onAuthStateChanged(async function (user) {
+firebase.auth().onAuthStateChanged(async 
+   (user) {
     if (user) {
       let currentUserName = firebase.auth().currentUser.displayName
      // Signout button
