@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" type="text/css">
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.css" />
+</head>
+
+<body>
+  <div class="sign-in-or-sign-out"></div>
+ 
+  <!-- Put the Firebase config here --> 
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+  <!-- Firebase Auth -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {apiKey: "AIzaSyDVkSPZVMZPK3UBibMwBmo_2d97KlcJE3Y",
+    authDomain: "kiei-451-ec081.firebaseapp.com",
+    projectId: "kiei-451-ec081",
+    storageBucket: "kiei-451-ec081.appspot.com",
+    messagingSenderId: "306609130724",
+    appId: "1:306609130724:web:0fe13d2a2ce346f4d970f1",
+    measurementId: "G-MWYKVEHD5V"
+} // replace
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="index.js"></script>
+</body>
+
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to subby</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1 class="m-8 p-2 font-bold text-xl bg-green-400 border-green-400 rounded w-1/3 border-8" >Add your subscriptions</h1>
+    <div class = "m-4 p-2 sm:flex">
+        <div class="sm:w-1/3 p-4  text-4xl"> <img src="spotify.png"> </div>
+        <div class="sm:w-1/3 p-4  text-4xl">Spotify</div>
+    </div>
+
+    <div class = "m-4 p-2 sm:flex">
+        <div class="sm:w-1/3 p-4  text-4xl"> <img src="netflix.png"> </div>
+        <div class="sm:w-1/3 p-4  text-4xl">Netflix</div>
+    </div>
+
+    <div class = "m-4 p-2 sm:flex">
+        <div class="sm:w-1/3 p-4  text-4xl"> <img src="hulu.png"> </div>
+        <div class="sm:w-1/3 p-4  text-4xl">Hulu</div>
+    </div>
+
+    <div class = "m-4 p-2 sm:flex">
+        <div class="sm:w-1/3 p-4  text-4xl"> <img src="youtubetv.png"> </div>
+        <div class="sm:w-1/3 p-4  text-4xl">Youtube TV</div>
+    </div>
+
+    <div class = "m-4 p-2 sm:flex">
+        <div class="sm:w-1/3 p-4  text-4xl"> <img src="ubereats.png"> </div>
+        <div class="sm:w-1/3 p-4  text-4xl">Uber Eats</div>
+    </div>
+
+    <div class = "m-4 p-2 sm:flex">
+        <div class="sm:w-1/3 p-4  text-4xl"> <img src="doordash.png"> </div>
+        <div class="sm:w-1/3 p-4  text-4xl">Doordash</div>
+    </div>
+
+<script src="welcome.js"></script>
+</body>
+</html>
