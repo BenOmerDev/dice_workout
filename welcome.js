@@ -44,6 +44,12 @@ firebase.auth().onAuthStateChanged(async function(user) {
          userID: currentUserName,
          photoID: photoImage
        })
+        await db.collection('subscriptions').doc().set({
+          date: 'tbd',
+          price: 'tbd',
+          service: photoImage,
+          userId: 'tbd'
+        })
     })
       } 
    }
