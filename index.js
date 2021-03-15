@@ -8,6 +8,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
       email: user.email,
       name: user.displayName
     })
+    
     // 👇Beggining of Dashboard Body Content👇.
     let querySnapshot = await db.collection('subscriptions').get()
     console.log(`Number of subscriptions in collection: ${querySnapshot.size}`)
