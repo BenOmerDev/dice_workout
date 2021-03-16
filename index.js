@@ -26,22 +26,24 @@ firebase.auth().onAuthStateChanged(async function(user) {
           </div>
       </div>`)
 
-    let querySnapshot = await db.collection('subscriptions').get()
-    console.log(`Number of subscriptions in collection: ${querySnapshot.size}`)
-    let subs = querySnapshot.docs
+    let response = await fetch(`/.netlify/functions/subscriptions?userId=${user.uid}`)
+    console.log(`user ID is ${user.uid}`)
+    let subs = await response.json()
     console.log(subs)
     for (let i=0; i<subs.length; i++) {
       let subId = subs[i].id
-      let sub = subs[i].data()
-      let subDate = sub.date
-      let subPrice = sub.price
-      let subService = sub.service
-      let subUid = sub.userId
+      let sub = subs[i]
+      let subDate = sub.subDate
+      console.log(sub.date)
+      let subPrice = sub.subPrice
+      let subService = sub.subService
+      let subUid = sub.subUid
       
       document.querySelector('.subscriptions').insertAdjacentHTML('beforeend', `
         <div class="mx-8 flex">
-          <div class="w-1/3 mt-4 mb-2 px-8 text-center py-4 text-2xl text-black-600 
-          font-bold border-8 rounded-l-full border-green-600">${subService}</div>
+          <div class="w-1/3 mt-4 mb-2 px-8 py-2 border-8 rounded-l-full border-green-600">
+            <img src="${subService}" class="h-12">
+          </div>
           <div class="w-1/3 mt-4 mb-2 px-8 text-center py-4 text-2xl text-black-600 
           font-bold border-8 border-green-600">${subDate}</div>
           <div class="w-1/3 mt-4 mb-2 px-8 text-center py-4 text-2xl text-black-600 

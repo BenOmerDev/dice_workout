@@ -39,7 +39,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
 
      document.querySelector('.options').insertAdjacentHTML('beforeend',`
       <div class = "photo-${photoId} sm:w-1/3 md:w-1/4 ${opacityClass}">
-        <img src="${photoImage}" class = "w-full m-2 p-2">
+        <img src="${photoImage}" class = "w-full h-full m-2 p-2">
       </div>`)
     
      document.querySelector(`.photo-${photoId}`).addEventListener('click', async function(event) {
