@@ -10,6 +10,22 @@ firebase.auth().onAuthStateChanged(async function(user) {
     })
     
     // 👇Beggining of Dashboard Body Content👇.
+    document.querySelector('.subscriptions').insertAdjacentHTML('beforeend',`
+        <div class="mt-8 mb-2 mx-16 px-8 py-4 text-4xl text-green-600 font-bold text-center border-8 rounded-full border-gray-600">
+            <h1>Subscription Tracker</h1>`)
+    document.querySelector('.subscriptions').insertAdjacentHTML('beforeend',`
+      <div class=" mx-8   flex text-4xl text-center">
+          <div class="w-1/3 px-2 py-4">
+              ☁
+          </div>
+          <div class="w-1/3 px-2 py-4">
+              📅
+          </div>
+          <div class="w-1/3 px-2 py-4">
+              💲
+          </div>
+      </div>`)
+
     let querySnapshot = await db.collection('subscriptions').get()
     console.log(`Number of subscriptions in collection: ${querySnapshot.size}`)
     let subs = querySnapshot.docs
@@ -21,21 +37,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
       let subPrice = sub.price
       let subService = sub.service
       let subUid = sub.userId
-      document.querySelector('.subscriptions').insertAdjacentHTML('beforeend',`
-        <div class="mt-8 mb-2 mx-16 px-8 py-4 text-4xl text-green-600 font-bold text-center border-8 rounded-full border-gray-600">
-            <h1>Subscription Tracker</h1>`)
-      document.querySelector('.subscriptions').insertAdjacentHTML('beforeend',`
-        <div class=" mx-8   flex text-4xl text-center">
-            <div class="w-1/3 px-2 py-4">
-                ☁
-            </div>
-            <div class="w-1/3 px-2 py-4">
-                📅
-            </div>
-            <div class="w-1/3 px-2 py-4">
-                💲
-            </div>
-        </div>`)
+      
       document.querySelector('.subscriptions').insertAdjacentHTML('beforeend', `
         <div class="mx-8 flex">
           <div class="w-1/3 mt-4 mb-2 px-8 text-center py-4 text-2xl text-black-600 

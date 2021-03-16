@@ -12,9 +12,18 @@
 <body>
   <div class="sign-in-or-sign-out ml-8"></div>
 
-  <div class="text-green-600 underline font-bold text-2xl text-center"><a href="index.html">My Subscriptions</div>
+  <div class="index_button text-green-600 underline font-bold text-2xl text-center"><a href="index.html">My Subscriptions</a></div>
 
-  <div class="options flex ml-8"></div>
+    <div class="w-full mt-8">
+        <input type="text" id="date" name="date" class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+        <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2">Date</button>
+    </div>
+    <div class="w-full mt-8">
+        <input type="text" id="price" name="price" class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+        <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2">Price</button>
+    </div>
+
+  <div class="options flex flex-wrap"></div>
  
   <!-- Put the Firebase config here --> 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
