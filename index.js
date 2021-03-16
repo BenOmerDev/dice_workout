@@ -8,7 +8,8 @@ firebase.auth().onAuthStateChanged(async function(user) {
       email: user.email,
       name: user.displayName
     })
-    // :point_down::point_down::point_down:Beggining of Dashboard Body Content:point_down::point_down::point_down:
+    
+    // 👇Beggining of Dashboard Body Content👇.
     let querySnapshot = await db.collection('subscriptions').get()
     console.log(`Number of subscriptions in collection: ${querySnapshot.size}`)
     let subs = querySnapshot.docs
@@ -29,10 +30,10 @@ firebase.auth().onAuthStateChanged(async function(user) {
                 ☁
             </div>
             <div class="w-1/3 px-2 py-4">
-                :date:
+                📅
             </div>
             <div class="w-1/3 px-2 py-4">
-                :heavy_dollar_sign:
+                💲
             </div>
         </div>`)
       document.querySelector('.subscriptions').insertAdjacentHTML('beforeend', `
