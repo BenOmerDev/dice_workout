@@ -42,7 +42,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
       document.querySelector('.subscriptions').insertAdjacentHTML('beforeend', `
         <div class="mx-8 flex">
           <div class="w-1/3 mt-4 mb-2 px-8 py-2 border-8 rounded-l-full border-green-600">
-            <img src=".Assets/${subService}" class="h-12">
+            <img src="${subService}" class="h-12">
           </div>
           <div class="w-1/3 mt-4 mb-2 px-8 text-center py-4 text-2xl text-black-600 
           font-bold border-8 border-green-600">${subDate}</div>
