@@ -50,7 +50,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
          userID: currentUserName,
          photoID: photoImage
        })
-        await db.collection('subscriptions').doc(`${photoImage}-${firebase.auth().currentUser.uid}`).set({
+        await db.collection('subscriptions').doc(`Assets/${photoImage}-${firebase.auth().currentUser.uid}`).set({
           date: document.querySelector('#date').value,
           price: document.querySelector('#price').value,
           service: photoImage,
